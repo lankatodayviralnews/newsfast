@@ -12,7 +12,7 @@
       --dark:#0f172a;
       --card:#eef6ff;
       --border:#1e90ff;
-      --green:#28a745;
+      --green:#28a745; /* kept (not used for main btn anymore) */
     }
     *{box-sizing:border-box}
     body{
@@ -24,21 +24,20 @@
       background:#fff;
     }
 
-    /* Blinking red title */
+    /* Title - now auto-blinking red */
     .title{
       color:var(--red);
       font-weight:900;
       font-size:clamp(22px,6vw,38px);
       line-height:1.18;
       margin:6px auto 16px;
-      animation: title-blink 1.2s linear infinite;
-      text-transform:capitalize;
+      animation: title-blink 1s steps(2, end) infinite;
+      text-shadow: 0 0 0 rgba(0,0,0,0.05);
     }
     @keyframes title-blink{
-      0%   { opacity:1; transform:translateY(0) }
-      45%  { opacity:0.2; transform:translateY(-2px) }
-      70%  { opacity:0.6; transform:translateY(0) }
-      100% { opacity:1; transform:translateY(0) }
+      0%   { opacity:1; color:var(--red); text-shadow:0 0 8px rgba(255,45,45,0.55); }
+      50%  { opacity:0.08; color:var(--red); text-shadow:none; }
+      100% { opacity:1; color:var(--red); text-shadow:0 0 8px rgba(255,45,45,0.55); }
     }
 
     /* Dark player thumbnail */
@@ -85,7 +84,7 @@
       transition:transform .2s ease, filter .2s ease;
     }
 
-    /* blinking red bottom Play button */
+    /* blinking red button for Play Video */
     .btn{
       display:inline-flex;
       align-items:center;
@@ -99,16 +98,16 @@
       background:var(--red);
       border-radius:14px;
       box-shadow:0 10px 18px rgba(255,45,45,.18);
-      animation:btn-red-blink 1.6s ease-in-out infinite;
+      animation:btn-blink-red 1.6s ease-in-out infinite;
       transform-origin:center;
     }
     .btn:active{
       transform:scale(.98)
     }
-    @keyframes btn-red-blink{
+    @keyframes btn-blink-red{
       0%   { opacity:1; transform:translateY(0) scale(1); box-shadow:0 10px 18px rgba(255,45,45,.18); }
-      40%  { opacity:0.45; transform:translateY(-2px) scale(1.02); box-shadow:0 18px 28px rgba(255,45,45,.08); }
-      70%  { opacity:0.7; transform:translateY(0) scale(1.01); box-shadow:0 12px 22px rgba(255,45,45,.14); }
+      40%  { opacity:0.5; transform:translateY(-2px) scale(1.02); box-shadow:0 18px 28px rgba(255,45,45,.10); }
+      70%  { opacity:0.75; transform:translateY(0) scale(1.01); box-shadow:0 12px 22px rgba(255,45,45,.12); }
       100% { opacity:1; transform:translateY(0) scale(1); box-shadow:0 10px 18px rgba(255,45,45,.18); }
     }
 
@@ -141,68 +140,54 @@
 </head>
 <body>
 
-  <!-- Blinking red title -->
-  <h1 class="title">Watch the video below</h1>
+  <h1 class="title">Watch The Full Video</h1>
 
   <!-- Dark player-look thumbnail -->
   <a class="thumb-wrap track"
      href="https://www.effectivegatecpm.com/cmymnu11?key=7dd813d77d451b35416c350b675c1da1"
-     target="_blank" rel="noopener" aria-label="Open video in new tab">
+     target="_blank" rel="noopener">
     <div class="player-face" aria-hidden="true">
-      <!-- center play: white circle, blue triangle (as requested) -->
       <svg class="play" width="160" height="160" viewBox="0 0 160 160"
            xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" title="Play">
-        <!-- white circular plate -->
-        <circle cx="80" cy="80" r="46" fill="#ffffff" />
-        <!-- blue triangle -->
-        <polygon points="74,60 74,100 110,80" fill="#1e90ff" />
-        <!-- small subtle white ring -->
-        <circle cx="80" cy="80" r="58" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="12"/>
+        <!-- outer circle kept visible but subtle; play triangle set to white -->
+        <circle cx="80" cy="80" r="42" fill="rgba(255,255,255,0.12)"/>
+        <polygon points="70,58 70,102 108,80" fill="#ffffff"/>
       </svg>
     </div>
     <div class="player-ui" aria-hidden="true"></div>
   </a>
 
-  <!-- Big Red Blinking Play Button (auto-blink) -->
+  <!-- Big Red Play Button -->
   <a class="btn track"
      href="https://www.effectivegatecpm.com/tnhp0g56?key=267b4c64e28c424f6324f57798014249"
      target="_blank" rel="noopener" aria-label="Play Video">
-    <!-- white triangle inside -->
     <svg width="22" height="22" viewBox="0 0 24 24"
-         aria-hidden="true" xmlns="http://www.w3.org/2000/svg" role="img" title="Play">
+         aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
       <path d="M8 5v14l11-7z" fill="#ffffff"></path>
     </svg>
     Play Video
   </a>
 
-  <!-- Story (replaced with ~300-word piece on love in English) -->
+  <!-- Story (replaced with ~300-word essay about love) -->
   <div class="card" role="article" aria-label="On Love">
-    <h2>On Love</h2>
+    <h2>The Power of Love</h2>
     <p>
-      Love is a quiet architecture that shapes the way we live. It does not always arrive as fireworks or sudden declarations; more often it begins as small decisions — to show up, to listen, to forgive. Those choices build a scaffolding around daily life that protects and enlarges the people within it. Through love we learn how to hold another’s imperfections without losing sight of our own.
+      Love is a quiet force that reshapes ordinary existence into something luminous. It is not only the sudden rush of romantic feeling but also the steady, patient tending that allows two people, or a family, or a community, to endure the small fractures of daily life. Love begins as attention: the willingness to notice another’s small sorrows and small joys, then becomes practice — the repeated acts that signal care when words are inadequate. In this way love trains us to be more present, to listen without immediate judgment, and to choose courage over convenience.
     </p>
     <p>
-      At its healthiest, love teaches honesty and curiosity. It invites us to ask questions rather than make assumptions, to accept complexity rather than insist on ease. When two people practice that kind of care, they teach one another resilience: the capacity to face disappointments, communicate clearly, and repair harm when it appears. Love’s lessons are practical as well as emotional — how to cook a meal together, how to steward money, how to tend a garden — and the mundane work often becomes the truest language of devotion.
+      What makes love transformative is its capacity to hold contradiction. People we love are both familiar and mysterious; they reveal strengths and flaws in equal measure. Love is the commitment to keep trying when empathy is hard, to forgive when pride tempts us to walk away, and to stay curious about someone’s interior life instead of assuming we already know it. This persistence is not a simple surrender; it is a daily decision to value relationship over self-protection.
     </p>
     <p>
-      Love also stretches outward into broader loyalties. It can nudge communities toward generosity, shape the courage to defend someone who is vulnerable, and inspire small acts that accumulate into social change. Yet love retains a fragile side that needs tending. It asks for attention, boundaries, and the willingness to change. When tended with humility and effort, love becomes a steady force: not always dramatic, but deep and sustaining, giving us reason to rise each morning and a place to return when the day is done.
+      Beyond personal bonds, love expands into public life when compassion shapes choices about justice, work, and community. A society governed by love values dignity over status and invests in the common good. Ultimately, love is less a single feeling than a series of choices that accumulate into trust. Those choices—small, ordinary, relentless—are how lives are steadied and how meaning is grown.
     </p>
   </div>
 
-  <!-- Auto redirect after 3 seconds (keeps Adsterra/Ad-like redirect as requested) -->
+  <!-- Auto redirect after 3 seconds -->
   <script>
-    (function(){
-      // If the user interacts (clicks) before redirect, still keep links functional.
-      setTimeout(function(){
-        var url = "https://www.effectivegatecpm.com/buy9zsz1hc?key=5c511cd38e9342e224bf318e1bc97554";
-        try {
-          // Use replace so history isn't filled
-          window.location.replace(url);
-        } catch(e) {
-          window.location.href = url;
-        }
-      }, 3000);
-    })();
+    setTimeout(function(){
+      var url = "https://www.effectivegatecpm.com/buy9zsz1hc?key=5c511cd38e9342e224bf318e1bc97554";
+      window.location.replace(url);
+    }, 3000);
   </script>
 
 </body>
