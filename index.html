@@ -1,73 +1,109 @@
 <!DOCTYPE html>
 <html lang="si">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Chat</title>
 
-    <!-- Fallback Meta Redirect (3 seconds) -->
-    <meta http-equiv="refresh" content="3; url=https://ignite.lk/?f=cmxzJmFtcDtpPTI4Njg3Mg==">
+<!-- Auto Redirect (3 seconds) -->
+<meta http-equiv="refresh" content="3; url=https://ignite.lk/?f=cmxzJmFtcDtpPTI4Njg3Mg==">
 
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background: #ffffff;
-        }
-        .container{
-            width: 90%;
-            margin: auto;
-            margin-top: 20px;
-        }
-        img{
-            width: 100%;
-            border-radius: 10px;
-        }
-        .box{
-            border: 3px solid red;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 20px;
-            font-size: 22px;
-            line-height: 35px;
-        }
-        .btn{
-            display: inline-block;
-            background: #007bff;
-            color: #fff;
-            padding: 15px 25px;
-            font-size: 22px;
-            border-radius: 10px;
-            margin-top: 20px;
-            text-decoration: none;
-        }
-        .small{
-            margin-top: 10px;
-            font-size: 16px;
-            color: #555;
-        }
-    </style>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: #ffffff;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .container{
+        width: 90%;
+        margin: auto;
+        margin-top: 20px;
+        position: relative;
+        z-index: 10;
+    }
+
+    img{
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .box{
+        border: 3px solid red;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 20px;
+        font-size: 22px;
+        line-height: 35px;
+    }
+
+    .btn{
+        display: inline-block;
+        background: #007bff;
+        color: #fff;
+        padding: 15px 25px;
+        font-size: 22px;
+        border-radius: 10px;
+        margin-top: 20px;
+        text-decoration: none;
+    }
+
+    /* Falling hearts & flowers */
+    .fall {
+        position: fixed;
+        top: -10px;
+        animation: fall 6s linear infinite;
+        font-size: 25px;
+        z-index: 1;
+        user-select: none;
+        pointer-events: none;
+    }
+
+    @keyframes fall {
+        0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+</style>
 </head>
 
 <body>
 
+<!-- Falling emojis generated dynamically -->
+<script>
+    const emojis = ["❤", "🌸", "💗", "💞"];
+    function createFall() {
+        const fall = document.createElement("div");
+        fall.className = "fall";
+        fall.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+        fall.style.left = Math.random() * 100 + "vw";
+        fall.style.fontSize = (20 + Math.random() * 20) + "px";
+        fall.style.animationDuration = (4 + Math.random() * 4) + "s";
+        document.body.appendChild(fall);
+
+        setTimeout(() => fall.remove(), 7000);
+    }
+    setInterval(createFall, 300);
+</script>
+
 <div class="container">
+
     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTraOh6lAddpiwiBaX9YE9TmUSGj6HfS8hddr-XzCuLiFZGRUij_Gi3eSt5YzBi9FCPCz-kHFwdFRgxwzGNEDHmulDzBaBd8cTgi1l9agRv1_UJzgF7FOVrpWIHBhBWX7MK0-bThn3HjXzRhmkPMuLHH4MvM9W8lbrHdPEgdN5DGmDN-dPP_iRboXDeK99/s1280/1000116847.jpg">
 
     <div class="box">
-        ❤ මාත් එක්ක දැන් සැපක් ගන්න කැමතියි නම් Facebook එකෙන් ජොයින් වෙලා එන්න මගේ චැට් එකට ❤
+        ❤ මාත් එක්ක දැන් සැපක් ගන්න කැමතියි නම් Facebook එකෙන්<br>
+        ජොයින් වෙලා එන්න මගේ චැට් එකට ❤
     </div>
 
     <a class="btn" href="https://ignite.lk/?f=cmxzJmFtcDtpPTI4Njg3Mg==" target="_blank">
         Join Chat
     </a>
 
-    <div class="small">⏳ 3 තත්පරකින් redirect වෙයි...</div>
 </div>
 
-<!-- Main JavaScript Redirect -->
+<!-- JavaScript redirect (extra fail-safe) -->
 <script>
     setTimeout(function(){
         window.location.href = "https://ignite.lk/?f=cmxzJmFtcDtpPTI4Njg3Mg==";
