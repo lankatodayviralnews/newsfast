@@ -1,85 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="si">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Join Chat</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Noto Sans Sinhala", Arial, sans-serif;
-      background: #ffffff;
-      color: #222;
-      text-align: center;
-    }
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+}
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 16px;
-    }
+.container{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
 
-    /* Top Image */
-    .top-photo {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
+img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
 
-    /* Red Frame */
-    .frame {
-      border: 5px solid red;
-      border-radius: 12px;
-      padding: 18px;
-      font-size: 22px;
-      line-height: 1.5;
-      margin-bottom: 25px;
-      background: #fff5f5;
-    }
+.box{
+    border: 3px solid red;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    font-size: 22px;
+    line-height: 35px;
+}
 
-    /* Blue Button */
-    .join-btn {
-      display: inline-block;
-      background: #007bff;
-      color: #fff;
-      padding: 14px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: bold;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
-    }
-  </style>
+.btn{
+    display: inline-block;
+    background: #007bff;
+    color: #fff;
+    padding: 15px 25px;
+    font-size: 22px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-decoration: none;
+}
+</style>
+
 </head>
-
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <!-- IMAGE YOU PROVIDED -->
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTraOh6lAddpiwiBaX9YE9TmUSGj6HfS8hddr-XzCuLiFZGRUij_Gi3eSt5YzBi9FCPCz-kHFwdFRgxwzGNEDHmulDzBaBd8cTgi1l9agRv1_UJzgF7FOVrpWIHBhBWX7MK0-bThn3HjXzRhmkPMuLHH4MvM9W8lbrHdPEgdN5DGmDN-dPP_iRboXDeK99/s1280/1000116847.jpg"
-         class="top-photo" alt="Photo"/>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTraOh6lAddpiwiBaX9YE9TmUSGj6HfS8hddr-XzCuLiFZGRUij_Gi3eSt5YzBi9FCPCz-kHFwdFRgxwzGNEDHmulDzBaBd8cTgi1l9agRv1_UJzgF7FOVrpWIHBhBWX7MK0-bThn3HjXzRhmkPMuLHH4MvM9W8lbrHdPEgdN5DGmDN-dPP_iRboXDeK99/s1280/1000116847.jpg">
 
-    <!-- RED FRAME TEXT -->
-    <div class="frame">
-      මාත් එක්ක දැන් වීඩියෝ සැපක් ගන්න කැමතියි නම් එන්න මගේ Group එකට පහතින් Join වෙන්න
+    <div class="box">
+        මාත් එක්ක දැන් වීඩියේ සපත් ගන්න කැමතියි නම් අපි එන්න මගේ Group එකට පැමින Join වෙන්න
     </div>
 
-    <!-- BLUE JOIN BUTTON -->
-    <a href="https://ignite.lk/?f=cmxzJmFtcDtpPTI4Njg3Mg==" 
-       class="join-btn" target="_blank">
-       Join Chat
-    </a>
+    <a class="btn" href="YOUR_LINK_HERE">Join Chat</a>
 
-  </div>
-
-  <!-- AUTO REDIRECT EVERY 3 SECONDS -->
-  <script>
-    setInterval(function () {
-      window.location.href = "https://ignite.lk/?f=cmxzJmFtcDtpPTI4Njg3Mg==";
-    }, 3000);
-  </script>
+</div>
 
 </body>
 </html>
